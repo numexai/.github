@@ -1,0 +1,26 @@
+name: 💡 Özellik isteği
+description: Numex ailesi için yeni bir fikir öner
+labels: ["öneri"]
+body:
+  - type: input
+    id: urun
+    attributes:
+      label: Hangi ürün için?
+      placeholder: "ör. Codex, Okul, Market, CLI…"
+  - type: textarea
+    id: sorun
+    attributes:
+      label: Hangi sorunu çözüyor?
+      description: "\"… yaparken … zorlanıyorum\" gibi."
+    validations:
+      required: true
+  - type: textarea
+    id: oneri
+    attributes:
+      label: Önerin
+    validations:
+      required: true
+  - type: textarea
+    id: alternatif
+    attributes:
+      label: Denediğin alternatifler

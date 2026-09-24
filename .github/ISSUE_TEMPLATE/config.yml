@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🌐 Numex AI
+    url: https://numexai.com.tr
+    about: Ürünleri dene, planları incele.
+  - name: 📖 Numexpedia
+    url: https://pedia.numexai.com.tr
+    about: Numex ve yapay zekâ hakkında Türkçe makaleler.
+  - name: 🔒 Güvenlik bildirimi
+    url: mailto:destek@numexai.com.tr
+    about: Güvenlik açıklarını lütfen herkese açık issue yerine e-postayla bildir.
