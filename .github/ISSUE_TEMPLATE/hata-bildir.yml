@@ -1,0 +1,54 @@
+name: 🐞 Hata bildir
+description: Bir Numex ürününde veya bu depodaki belgelerde hata bildir
+labels: ["hata"]
+body:
+  - type: dropdown
+    id: urun
+    attributes:
+      label: Hangi ürün?
+      options:
+        - Numex AI (web sohbet)
+        - Numex Codex (web / IDE / VS Code)
+        - Numex CLI
+        - Codex SDK / API
+        - Numex Okul
+        - Numex Market
+        - Numex Hub / Forge
+        - Numexpedia
+        - PC Doktoru
+        - Pusulam
+        - Bu depodaki belgeler
+    validations:
+      required: true
+  - type: textarea
+    id: ne-oldu
+    attributes:
+      label: Ne oldu?
+      description: Hatayı kısaca anlat.
+    validations:
+      required: true
+  - type: textarea
+    id: adimlar
+    attributes:
+      label: Nasıl tekrarlanır?
+      placeholder: |
+        1. ...
+        2. ...
+        3. Hata görünür
+  - type: textarea
+    id: beklenen
+    attributes:
+      label: Ne bekliyordun?
+  - type: input
+    id: surum
+    attributes:
+      label: Sürüm / ortam
+      placeholder: "ör. Codex IDE v2.9.59, Windows 11 · CLI v3.3.10 · Chrome 130"
+  - type: textarea
+    id: ekran
+    attributes:
+      label: Ekran görüntüsü / log
+      description: E-posta, token, API anahtarı gibi kişisel bilgileri gizlemeyi unutma.
+  - type: markdown
+    attributes:
+      value: "🔒 **Güvenlik açığı mı?** Lütfen issue açma, destek@numexai.com.tr adresine yaz."
