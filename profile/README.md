@@ -87,6 +87,7 @@ numex "koyu temalı bir yapılacaklar uygulaması yap"
 | 📖 [**numex-pedia**](https://github.com/numexai/numex-pedia) | Özgür Türkçe ansiklopedi |
 | 📦 [**numex-hub**](https://github.com/numexai/numex-hub) · 🏗️ [**numex-forge**](https://github.com/numexai/numex-forge) | AI destekli depo yönetimi ve Türkçe Git sunucusu |
 | 🎮 [**numex-oyun-bahcesi**](https://github.com/numexai/numex-oyun-bahcesi) | 7'den 70'e oyunlar |
+| 🧭 [**pusulamx**](https://github.com/numexai/pusulamx) | **Pusulam** — esnaf ve KOBİ'ler için ön muhasebe, POS, e-Fatura; içinde Numex AI asistanı · [pusulamx.com](https://pusulamx.com) |
 | 🕵️ [**detective-mode-ai**](https://github.com/numexai/detective-mode-ai) | Detective Mode™: 2024 konsepti, bugün Numex AI'da canlı |
 | 🌐 [**numexai.com.tr/aile**](https://www.numexai.com.tr/aile) | Numex Ailesi haritası |
 
