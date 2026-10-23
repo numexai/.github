@@ -1,0 +1,25 @@
+name: Numex Ailesi eşitle
+# numexai.com.tr'deki tek kaynaktan (numex-aile.json) profil README'sindeki "Numex Ailesi" bölümünü her gün yeniler.
+on:
+  schedule:
+    - cron: '17 4 * * *'   # her gün 07:17 (TSİ)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  esitle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Numex Ailesi bölümünü yenile
+        run: node scripts/aile-esitle.mjs
+      - name: Değiştiyse kaydet
+        run: |
+          if git diff --quiet; then echo "değişiklik yok"; exit 0; fi
+          git config user.name "Numex AI"
+          git config user.email "destek@numexai.com.tr"
+          git commit -am "Numex Ailesi güncellendi (numexai.com.tr kaydından)"
+          git push

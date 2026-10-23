@@ -64,6 +64,21 @@ kod ajanına, doğrulanmış testlerden açık kaynak uygulama marketine.
 
 **Aynı ekipten:** 🧭 [Pusulam](https://pusulamx.com) — ön muhasebe & POS · 🩺 [PC Doktoru](https://pcdoktoru.com.tr) — Windows bakım
 
+<!-- NUMEX-AILE:BAS — numexai.com.tr/numex-aile.json'dan her gün kendiliğinden güncellenir; elle düzenleme -->
+### ✨ Ailede yeni
+
+| Ürün | Ne yapar |
+|---|---|
+| 🧊 [**Numex 3D**](https://3d.numexai.com.tr) | Tariften üretilen, parçalanabilir, hareketli 3B modeller; GLB ücretsiz (CC BY 4.0) |
+| 🌌 [**Numex Evren**](https://evren.numexai.com.tr) | Güneş sistemi kütüphanesi — üç boyutlu, eğitim amaçlı |
+| 🗺️ [**Numex Türkiye haritası**](https://turkiye.numexai.com.tr) | İnteraktif Türkiye coğrafya haritası — eğitim amaçlı |
+| 📄 [**Numex CV**](https://cv.numexai.com.tr) | Ücretsiz, reklamsız, üyeliksiz CV hazırlayıcı — 6 şablon, canlı A4 önizleme, tek tıkla PDF; bilgiler yalnız tarayıcıda kalır |
+
+**Yeni sayfalar:**
+- 💬 **Numex AI:** [Teknoloji](https://www.numexai.com.tr/teknoloji) · [Blog](https://www.numexai.com.tr/blog) · [Keşfet — Numex'le yapılanlar (Vitrin)](https://www.numexai.com.tr/vitrin) · [Plan modu](https://www.numexai.com.tr/client/plan-mode.html) · [Hakkında](https://www.numexai.com.tr/hakkinda) · [Modeller](https://www.numexai.com.tr/modeller) · [Planlar](https://www.numexai.com.tr/planlar) · [Çoklu ajan](https://www.numexai.com.tr/coklu-ajan) · [Başarı hikâyeleri](https://www.numexai.com.tr/basari-hikayeleri) · [API](https://www.numexai.com.tr/client/api.html) · [CLI](https://www.numexai.com.tr/client/cli.html) · [Codex rehberi](https://www.numexai.com.tr/client/codex-guide-default.html) · [Rehberler (prompt, güvenlik, deepview)](https://www.numexai.com.tr/client/prompt-engineering-guide.html)
+
+<!-- NUMEX-AILE:SON -->
+
 ## ⚡ 30 saniyede dene
 
 ```bash
