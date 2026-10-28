@@ -36,8 +36,11 @@ export function kova(kategori) {
   return KOVALAR.find((k) => k.anahtar && k.anahtar.test(s))?.ad || 'Diğer';
 }
 
+// Market = sahibi olmayan (Numex'in otonom ürettiği), herkese açık uygulamalar; kullanıcıların vitrine koydukları sayılmaz
+export const numexUygulamalari = (liste) => liste.filter((u) => !u.owner && u.is_private !== true);
+
 export function say(uygulamalar) {
-  const numex = uygulamalar.filter((u) => !u.owner && u.is_private !== true);
+  const numex = numexUygulamalari(uygulamalar);
   const sayi = Object.fromEntries(KOVALAR.map((k) => [k.ad, 0]));
   for (const u of numex) sayi[kova(u.category)]++;
   return {
