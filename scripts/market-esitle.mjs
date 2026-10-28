@@ -28,7 +28,7 @@ export const KOVALAR = [
 // README kategori tablolarındaki satır adları (yalnız bunlar güncellenir; "Oyun Bahçesi" gibi başka satırlara dokunulmaz)
 const TABLO_ADLARI = ['Oyunlar', 'Simülasyon', 'Yapay Zeka', 'Yapay Zekâ', 'Araçlar', 'Araçlar / Yardımcı', 'Üretkenlik', 'Web / OS', 'Diğer'];
 
-const sade = (s) => String(s || '').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i');
+export const sade = (s) => String(s || '').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i');
 
 export function kova(kategori) {
   const s = sade(kategori);
