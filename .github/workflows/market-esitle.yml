@@ -1,0 +1,27 @@
+name: Market eşitle
+# Profil README'sindeki Market uygulama sayısını numexai.com.tr vitrininden her gün yeniler; geride kalmasın.
+on:
+  schedule:
+    - cron: '27 4 * * *'   # her gün 07:27 (TSİ)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  esitle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Market sayılarını yenile
+        run: node scripts/market-esitle.mjs
+        env:
+          MARKET_DOSYALAR: profile/README.md
+      - name: Değiştiyse kaydet
+        run: |
+          if git diff --quiet; then echo "değişiklik yok"; exit 0; fi
+          git config user.name "Numex AI"
+          git config user.email "destek@numexai.com.tr"
+          git commit -am "Market sayısı güncellendi (numexai.com.tr vitrininden)"
+          git push

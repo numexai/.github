@@ -1,0 +1,12 @@
+{
+  "toplam": 44,
+  "kategoriler": [
+    { "ad": "Oyunlar", "simge": "🎮", "sayi": 6 },
+    { "ad": "Simülasyon", "simge": "🧪", "sayi": 4 },
+    { "ad": "Yapay Zekâ", "simge": "🤖", "sayi": 3 },
+    { "ad": "Araçlar", "simge": "🛠️", "sayi": 12 },
+    { "ad": "Üretkenlik", "simge": "⚡", "sayi": 8 },
+    { "ad": "Web / OS", "simge": "🖥️", "sayi": 3 },
+    { "ad": "Diğer", "simge": "📦", "sayi": 8, "aciklama": "tanıtım sayfaları, ilan platformu ve daha fazlası" }
+  ]
+}
