@@ -23,12 +23,13 @@ export const KOVALAR = [
   { ad: 'Araçlar', simge: '🛠️', anahtar: /\b(arac\w*|yardimci|tools?|utilit\w*)\b/ },
   { ad: 'Üretkenlik', simge: '⚡', anahtar: /\b(uretkenlik|productivity|is araclari|business)\b/ },
   { ad: 'Web / OS', simge: '🖥️', anahtar: /\b(web|os|isletim sistemi|desktop|masaustu)\b/ },
+  { ad: 'Eğitim', simge: '🎓', anahtar: /\b(egitim\w*|ogrenme|education|learning)\b/ },
   { ad: 'Diğer', simge: '📦', anahtar: null, aciklama: 'tanıtım sayfaları, ilan platformu ve daha fazlası' },
 ];
 // README kategori tablolarındaki satır adları (yalnız bunlar güncellenir; "Oyun Bahçesi" gibi başka satırlara dokunulmaz)
-const TABLO_ADLARI = ['Oyunlar', 'Simülasyon', 'Yapay Zeka', 'Yapay Zekâ', 'Araçlar', 'Araçlar / Yardımcı', 'Üretkenlik', 'Web / OS', 'Diğer'];
+const TABLO_ADLARI = ['Oyunlar', 'Simülasyon', 'Yapay Zeka', 'Yapay Zekâ', 'Araçlar', 'Araçlar / Yardımcı', 'Üretkenlik', 'Web / OS', 'Eğitim', 'Diğer'];
 
-export const sade = (s) => String(s || '').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i');
+export const sade = (s) => String(s || '').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i').replace(/[-_]+/g, ' ');
 
 export function kova(kategori) {
   const s = sade(kategori);
@@ -36,8 +37,15 @@ export function kova(kategori) {
   return KOVALAR.find((k) => k.anahtar && k.anahtar.test(s))?.ad || 'Diğer';
 }
 
-// Market = sahibi olmayan (Numex'in otonom ürettiği), herkese açık uygulamalar; kullanıcıların vitrine koydukları sayılmaz
-export const numexUygulamalari = (liste) => liste.filter((u) => !u.owner && u.is_private !== true);
+// Market = Numex'in otonom ürettiği, herkese açık uygulamalar. Vitrinde bunlar ya sahipsiz ya da hepsi Numex hesabına
+// kayıtlıdır: en çok uygulaması olan sahip Numex sayılır; kullanıcıların vitrine koydukları sayılmaz.
+export function numexUygulamalari(liste) {
+  const acik = liste.filter((u) => u.is_private !== true);
+  const sayi = {};
+  for (const u of acik) if (u.owner) sayi[String(u.owner)] = (sayi[String(u.owner)] || 0) + 1;
+  const numex = Object.entries(sayi).sort((a, b) => b[1] - a[1])[0]?.[0];
+  return acik.filter((u) => !u.owner || String(u.owner) === numex);
+}
 
 export function say(uygulamalar) {
   const numex = numexUygulamalari(uygulamalar);
@@ -97,6 +105,14 @@ if (process.argv[1]?.endsWith('market-esitle.mjs')) {
   if (!Array.isArray(liste)) throw new Error('Kaynak beklenmedik biçimde (dizi değil) — hiçbir şey değiştirilmedi');
   const yeni = say(liste);
   if (yeni.toplam < 1 || yeni.toplam < eski.toplam * 0.8) {
+    // Teşhis — günlükler herkese açık: kimlik yazılmaz, yalnız sayılar
+    const sahipler = {};
+    for (const u of liste) if (u.owner) sahipler[String(u.owner)] = (sahipler[String(u.owner)] || 0) + 1;
+    const kategoriler = {};
+    for (const u of liste) kategoriler[u.category] = (kategoriler[u.category] || 0) + 1;
+    console.log(`Teşhis: kaynakta ${liste.length} kayıt; sahipsiz ${liste.filter((u) => !u.owner).length}, özel ${liste.filter((u) => u.is_private).length}, ` +
+      `farklı sahip ${Object.keys(sahipler).length} (en büyük sahip: ${Math.max(0, ...Object.values(sahipler))} kayıt)`);
+    console.log(`Teşhis: alanlar ${Object.keys(liste[0] || {}).join(', ')}; kategoriler ${JSON.stringify(kategoriler)}`);
     throw new Error(`Kaynakta ${yeni.toplam} uygulama var, önceki ${eski.toplam} — beklenmedik düşüş, hiçbir şey değiştirilmedi`);
   }
   if (JSON.stringify(yeni) === JSON.stringify(eski)) { console.log(`Market — değişiklik yok (${yeni.toplam} uygulama)`); process.exit(0); }
