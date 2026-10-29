@@ -1,5 +1,5 @@
 {
-  "toplam": 60,
+  "toplam": 61,
   "kategoriler": [
     {
       "ad": "Oyunlar",
@@ -19,7 +19,7 @@
     {
       "ad": "Araçlar",
       "simge": "🛠️",
-      "sayi": 14
+      "sayi": 15
     },
     {
       "ad": "Üretkenlik",

@@ -40,7 +40,7 @@ kod ajanına, doğrulanmış testlerden açık kaynak uygulama marketine.
 </tr>
 <tr>
 <td width="50%"><a href="https://market.numexai.com.tr"><img src="https://raw.githubusercontent.com/numexai/numex_nedir/main/gorseller/kart-market.png" alt="Numex Market"></a>
-<b>🛍️ Numex Market</b> — Numex'in kendi yazdığı 60 uygulama. Hepsi ücretsiz ve açık kaynak: dene, incele, çatalla.<br>
+<b>🛍️ Numex Market</b> — Numex'in kendi yazdığı 61 uygulama. Hepsi ücretsiz ve açık kaynak: dene, incele, çatalla.<br>
 👉 <a href="https://market.numexai.com.tr"><b>market.numexai.com.tr</b></a></td>
 <td width="50%"><a href="https://pedia.numexai.com.tr"><img src="https://raw.githubusercontent.com/numexai/numex_nedir/main/gorseller/kart-pedia.png" alt="Numexpedia"></a>
 <b>📖 Numexpedia</b> — Bilgisayar, yapay zekâ ve yazılım; herkesin anlayacağı sade Türkçe ile. Özgür ve ücretsiz.<br>
@@ -60,7 +60,7 @@ kod ajanına, doğrulanmış testlerden açık kaynak uygulama marketine.
 | 💬 [**Numex**](https://numexai.com.tr) — sohbet & asistan | ⌨️ **CLI** — `npm i -g @numexai/cli` | 📦 [**Hub**](https://hub.numexai.com.tr) — keşfet & çatalla |
 | 🎓 [**Okul**](https://okul.numexai.com.tr) — doğrulanmış testler | 🧰 **SDK** — `npm i numexcodex-sdk` | 🏗️ [**Forge**](https://forge.numexai.com.tr) — Git sunucusu |
 | 🧩 [**Codex**](https://codex.numexai.com.tr) — Türkçe kod ajanı | 🔌 **API** — `numex-pro · fast · think · vision · code` | 📖 [**Numexpedia**](https://pedia.numexai.com.tr) — Türkçe ansiklopedi |
-| 🛍️ [**Market**](https://market.numexai.com.tr) — 60 açık kaynak uygulama | | 🎮 **Oyun Bahçesi** — 7'den 70'e |
+| 🛍️ [**Market**](https://market.numexai.com.tr) — 61 açık kaynak uygulama | | 🎮 **Oyun Bahçesi** — 7'den 70'e |
 
 **Aynı ekipten:** 🧭 [Pusulam](https://pusulamx.com) — ön muhasebe & POS · 🩺 [PC Doktoru](https://pcdoktoru.com.tr) — Windows bakım
 
